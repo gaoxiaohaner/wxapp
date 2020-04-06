@@ -1,24 +1,13 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# wxapp-
+# wxapp-完整版仿微信的小程序demo
 =======
-<<<<<<< HEAD
-# wxapp-
-=======
-# 云开发 quickstart
-
-这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
-
-- 数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库
-- 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
-- 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
+# 云开发 云函数路由
+ 欢迎加入我们的微信小程序云开发QQ交流群：1050494616
+ <image src="https://636f-code-test-1301231348.tcb.qcloud.la/qqqun.jpg?sign=bf53ce39cd4844e7dc024fcdc8719fc1&t=1586146309"/>
 
 ## 参考文档
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
-
->>>>>>> wxapp1
+- [仿微信好友聊天](https://blog.csdn.net/weixin_41595277/article/details/104252171)
 >>>>>>> 完整版仿微信聊天、发语音、发文件，朋友圈，加好友项目
 =======
 
->>>>>>> ae227640b05ac658b9f61d827a2e6489502b9729
