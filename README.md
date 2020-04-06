@@ -1,7 +1,7 @@
 # wxapp-完整版仿微信的小程序demo
 =======
 # 云开发 云函数路由
- 欢迎加入我们的微信小程序云开发QQ交流群：1050494616
+ 欢迎加入我们的微信小程序云开发QQ交流群：**1050494616**
  <image src="https://636f-code-test-1301231348.tcb.qcloud.la/qqqun.jpg?sign=bf53ce39cd4844e7dc024fcdc8719fc1&t=1586146309"/>
 
 ## 参考文档
