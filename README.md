@@ -13,11 +13,11 @@
  
  ## 配置说明：
  #### 创建集合
-  1 addpeople
-  2 chatroom_example
-  3 pengyouquan
-  4 user
- ####将云函数 yunrouter 创建并部署 远端安装依赖即可使用
+   ##### 1 addpeople
+   ##### 2 chatroom_example
+   ##### 3 pengyouquan
+   ##### 4 user
+ #### 将云函数 yunrouter 创建并部署 远端安装依赖即可使用
 
 ## 参考文档
 
@@ -25,4 +25,5 @@
 - [仿微信好友聊天](https://blog.csdn.net/weixin_41595277/article/details/104252171)
 >>>>>>> 完整版仿微信聊天、发语音、发文件，朋友圈，加好友项目
 =======
+# 项目图片:
 
