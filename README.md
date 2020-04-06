@@ -26,7 +26,7 @@
 >>>>>>> 完整版仿微信聊天、发语音、发文件，朋友圈，加好友项目
 =======
 # 项目图片:
-
+![](https://wxapp-1259480632.cos.ap-beijing.myqcloud.com/wxapp%E4%BB%BF%E5%BE%AE%E4%BF%A1%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/1.jpg)
 <image src="https://wxapp-1259480632.cos.ap-beijing.myqcloud.com/wxapp%E4%BB%BF%E5%BE%AE%E4%BF%A1%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/1.jpg"/>
 <image src="https://wxapp-1259480632.cos.ap-beijing.myqcloud.com/wxapp%E4%BB%BF%E5%BE%AE%E4%BF%A1%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/2.jpg"/>
 <image src="https://wxapp-1259480632.cos.ap-beijing.myqcloud.com/wxapp%E4%BB%BF%E5%BE%AE%E4%BF%A1%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/3.jpg"/>
