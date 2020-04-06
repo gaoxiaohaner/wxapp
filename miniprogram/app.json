@@ -1,0 +1,53 @@
+{
+  "pages": [
+   
+    
+    "pages/index/index",
+    "pages/example/chatroom_example/pengyouquan/pengyouquan",    
+    "pages/example/chatroom_example/room/room",
+    "pages/example/chatroom_example/im",
+
+    "pages/usercenter/homepage/homepage",
+    "pages/login/login",
+    "pages/usercenter/homepage/admin/admin",
+    "pages/example/chatroom_example/haoyoupage/haoyoupage"
+        
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "学生地理位置校对"
+    }
+  },
+    "tabBar": {
+      "selectedColor": "#12331",
+      "color": "#00ff",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "主页",
+          "iconPath": "/images/页底 消息.png",
+          "selectedIconPath": "/images/页底 消息 点击后.png"
+        },
+        {
+          "pagePath": "pages/usercenter/homepage/homepage",
+          "text": "用户中心",
+          "iconPath": "/images/页底 用户.png",
+          "selectedIconPath": "/images/页底 用户 点击后.png"
+        }
+      ]
+    },
+  "window": {
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "码上发财",
+  "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+      "usingComponents": {
+        "cu-custom": "/style/cu-custom/cu-custom",
+      
+        "wh-authorCard": "/style/authorCard/wh-authorCard"
+
+      }
+}

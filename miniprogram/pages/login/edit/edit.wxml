@@ -1,0 +1,30 @@
+<view class="top-bg"></view>
+<view class="contain">
+      <view class="card">
+            <view class="title">修改资料</view>
+            <button class="phone" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+                  <block wx:if="{{phone==''}}"> 请点击获取您的手机号</block>
+                  <block wx:if="{{phone!==''}}"> {{phone}}</block>
+                  <image wx:if="{{phone==''}}" class="right" src="/images/right.png" />
+            </button>
+            <picker bindchange="choose" value="{{ids}}" range="{{campus}}" range-key="name">
+                  <view class="campus">
+                        <block wx:if="{{ids!==-1}}">当前选择：{{campus[ids].name}}</block>
+                        <block wx:if="{{ids==-1}}">请选择您所在校区</block>
+                        <image class="right" src="/images/right.png" />
+                  </view>
+            </picker>
+             <view class="contact">
+                  <input bindinput="emInput" value="{{email}}" maxlength="30" placeholder-class="pache" placeholder="输入您的邮箱地址" />
+            </view>
+            <view class="contact">
+                  <input bindinput="wxInput" value="{{wxnum}}" maxlength="30" placeholder-class="pache" placeholder="输入您的微信号(选填)" />
+            </view>
+            <view class="contact">
+                  <input type="number" bindinput="qqInput" value="{{qqnum}}" maxlength="20" placeholder-class="pache" placeholder="输入您的QQ号(选填)" />
+            </view>
+      </view>
+      <!--底部确认-->
+      <button class="confirm" open-type='getUserInfo' bindgetuserinfo="getUserInfo">提交修改</button>
+    
+</view>

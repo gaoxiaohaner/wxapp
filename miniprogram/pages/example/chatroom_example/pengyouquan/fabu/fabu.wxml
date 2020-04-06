@@ -1,0 +1,38 @@
+<block wx:if="{{ifopen}}">
+<textarea class="desc" placeholder="请输入内容" bindinput="getInput" />
+<!--选择发布图片文字或者是视频 -->
+ <switch checked="{{switchChecked}}" bindchange="switchChange"/>是否发布视频
+
+<view class="iamgeRootAll">
+
+<block  wx:if="{{choose==false}}">
+  <!-- 选择图片按钮 -->
+
+  <block wx:for="{{imgList}}" wx:key="index">
+    <view class="imgItem">
+ 
+      <image class="img" src='{{item}}' mode='aspectFill'></image>
+      <image class="closeImg" bindtap="DeleteImg" src="/images/close.png" data-index="{{index}}"></image>
+    </view>
+  </block>
+
+  <view wx:if="{{imgList.length<8}}" class="imgItem" bindtap="ChooseImage">
+    <image class="photo" src="/images/photo.png"></image>
+  </view>
+</block>
+
+<block  wx:else="{{choose==true}}">
+  <view  class="imgItem"  bindtap="video"  >
+ <image wx:if="{{count==0}}" class="photo"   src="/images/video.png"></image>
+<!-- 
+  <image  wx:if="{{count==1}}"  class="closeImg" bindtap="DeleteImg" src="/images/close.png" data-index="{{index}}"></image>
+-->
+
+  <video wx:if="{{count==1}}"  class="imgItem" src="{{videofile}}"></video>
+  </view>
+</block>
+
+</view>
+
+<button type="primary" bindtap="publish">发布</button>
+</block>

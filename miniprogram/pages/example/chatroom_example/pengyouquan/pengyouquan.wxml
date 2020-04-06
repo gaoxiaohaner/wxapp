@@ -1,0 +1,99 @@
+<block wx:if="{{ifopen}}">
+
+  <view class="cu-card dynamic " wx:for="{{dataList}}" wx:key="index" >
+  <view class="cu-item shadow">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+      <!-- 
+        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+        -->
+         <view class="cu-avatar round lg" style="background-image:url({{item.userInfo.avatarUrl}});"></view>
+        <view class="content flex-sub">
+         
+          <text class="text-red">{{item.userInfo.gender}}</text>
+          {{item.userInfo.nickName}}
+          <view class="text-gray text-sm flex justify-between">
+           {{item.date}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="text-content">
+     {{item.desc}}
+    </view>
+<!--图片 -->
+<block wx:if="{{item.kind==0}}" wx:key="key">
+    <view class="grid flex-sub padding-lr col-{{item.fileIDs.length<3?item.fileIDs.length:3}} {{item.fileIDs.length<2?'':'grid-square'}} " ><!--grid-square-->
+     <block  wx:for="{{item.fileIDs}}"  wx:key="key" wx:for-item="itemImg" >
+    <view class="bg-img{{item.fileIDs.length<2?item.fileIDs.length:''}}" >
+      <image class="bg-img{{item.fileIDs.length<2?item.fileIDs.length:''}}"  src="{{itemImg}}" data-img='{{[itemImg,item.fileIDs]}}' bindtap="previewImg"> </image>
+      <!-- wx:for可以用从数据库中调取的item进行循环。 -->
+        </view>
+      </block>
+    </view>
+  </block>
+<!-- 视频-->
+<block wx:if="{{item.kind==1}}">
+<video  id="{{item._id}}" controls="true"  enable-play-gesture="true"  class="video" src="{{item.fileIDs}}"  bindplay='videoPlay' bindpause="videopause" show-mute-btn='true' play-btn-position="center" ></video>
+</block>
+
+
+
+<!-- 点赞的那些东西-->
+    <view class="text-gray text-sm text-right padding " data-id="{{item._id}}" data-sort="{{index}}"> 
+   
+      <input bindinput="input" value="{{comment}}" placeholder="请输入您的评论" class=" margin-lr-xs222 text-pink"></input>
+      <text bindtap="comment"  placeholder="提交评论"  class=" cuIcon-goodsfill margin-lr-xs223 text-pink"></text>
+      <text  bindtap="zan" class="cuIcon-appreciatefill margin-lr-xs text-pink">{{item.zan}}点击点赞</text>
+      <text  bindtap="detail" class="cuIcon-messagefill margin-lr-xs text-pink">评论{{item.pinglun.length}}</text>
+    </view>
+    <!-- 评论的样式-->
+<!--  
+
+      <view class="cu-item " wx:if="{{item.kind==0}}" >
+        <view class="content">
+          <view class="radius margin-top-sm ">
+            <view class="flex1">
+              <view class="text-gray" >{{}}</view>
+              <view class="flex-sub">妹妹，你在帮他们给黑暗找借口吗?</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+        
+      <view class="cu-item " wx:if="{{item.kind==1}}">
+        <view class="content">
+          <view class="radius margin-top-sm ">
+            <view class="flex1">
+              <view class="text-gray" >视频的：</view>
+              <view class="flex-sub">妹妹，你在帮他们给黑暗找借口吗?</view>
+            </view>
+          </view>
+        </view>
+      </view>
+-->
+  </view>
+
+
+</view>
+
+
+
+
+<!--悬浮图 -->
+<van-transition show="{{ scrollTop>500 }}" custom-class="block" duration="600">
+      <view class="totop" bindtap="homepage">
+            <image src="/images/home.png"></image>
+      </view>
+</van-transition>
+
+<van-transition show="{{ scrollTop>500 }}" custom-class="block" duration="600">
+      <view class="totop2" bindtap="fabu">
+            <image class="totop3image" src="/images/fabu.png"></image>
+
+      </view>
+</van-transition>
+
+
+</block>

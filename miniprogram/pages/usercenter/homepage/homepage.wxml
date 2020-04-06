@@ -1,0 +1,93 @@
+<block wx:if="{{ifopen==1}}">  
+  
+  <view class="top_box">
+      <view class="top_1">
+            <view wx:if="{{!userinfo.userInfo}}" class="top_1_1" bindtap="go" data-go="/pages/login/login">点击登录</view>
+            <view wx:if="{{userinfo.userInfo}}" class="top_1_1">
+                  <open-data type="userNickName"></open-data>
+            </view>
+            <view class="top_1_2" wx:if="{{!userinfo.userInfo}}">一秒登录，体验所有功能</view>
+             <view class="top_1_2" wx:if="{{userinfo.userInfo}}" bindtap="go" data-go="/pages/login/edit/edit" data-status="1">点击修改资料</view>
+      </view>
+      <view class="top_2">
+            <view class="avator">
+                  <open-data wx:if="{{userinfo.userInfo}}" type="userAvatarUrl"></open-data>
+                  <image wx:if="{{!userinfo.userInfo}}" src="/images/avator.png"></image>
+            </view>
+      </view>
+</view>
+
+<!-- 
+    <button  wx:if="{{phone==''}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取用户手机号</button>
+  -->
+
+  <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view bindtap="money" class="flex flex-sub flex-direction solid-right">
+      <view class="text-xl text-orange">我的钱包</view>
+        <view class="margin-top-sm2">
+        XX<text class="cuIcon-attentionfill"></text>
+        </view>
+        <view><text class="text-price  text-size4 text-red">{{userinfo.money}}</text></view>
+    </view>
+    <view class="flex flex-sub flex-direction"  bindtap="">
+      <view class="text-xl text-green" >个人主页</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-fork"></text> Fork</view>
+          <view><text class="text-size4 text-gray">最新上线的</text></view>
+    </view>
+        <view class="flex flex-sub flex-direction solid-right" bindtap="orderdetail" >
+           <view class="text-xl text-blue">订单中心</view>
+           <view class="margin-top-sm">
+           <!-- 
+              <image class="orderimage" src="/images/help.png"></image> -->
+            <text class="cuIcon-favorfill"></text>Star    </view>
+             <view><text class="text-size4 text-gray">订单中心</text>
+            </view>
+        </view>
+  </view>
+
+
+
+
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+
+   
+      <view class="cu-item arrow">
+        <view class="content" bindtap="admin" data-url="/pages/usercenter/homepage/admin/admin" hover-class="none">
+          <text class="cuIcon-creativefill text-orange"></text>
+          <text class="text-red">管理员登录</text>
+        </view>
+      </view>
+  
+
+    <view class="cu-item arrow">
+      <view class="content" bindtap="go" data-go="/pages/usercenter/orderdetail/qujian/qujian">
+        <text class="cuIcon-creativefill text-grey"></text>
+        <text class="text-grey">未知</text>
+      </view>
+  </view>
+   
+    <view class="cu-item arrow">
+      <view class="content" bindtap="go" data-go="/pages/usercenter/about/about">
+        <text class="cuIcon-github text-grey"></text>
+        <text class="text-grey">关于小程序</text>
+      </view>
+    </view>
+
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode">
+        <text class="cuIcon-appreciatefill text-red"></text>
+        <text class="text-grey">关于码上发财</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="feedback">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey">意见反馈</text>
+      </button>
+    </view>
+
+  </view>
+  <view class="cu-tabbar-height"></view>
+  </block>

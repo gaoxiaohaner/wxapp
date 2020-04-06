@@ -1,0 +1,135 @@
+.video{
+
+  height: 340rpx;
+  display: inline-block;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  margin: 5rpx 5rpx 5rpx 45rpx;
+}
+.page {
+      background: #FF69B4;
+      width: 100%;
+      height: 100%;
+}
+/*悬浮图的css*/
+.totop {
+      position: fixed;
+      right: 30rpx;
+      bottom: 40rpx;
+}
+
+.totop image {
+      width: 100rpx;
+      height: 100rpx;
+      z-index: 9;
+}
+.totop2 {
+      position: fixed;
+      right: 30rpx;
+      bottom: 150rpx;
+}
+
+.totop2 image {
+      width: 100rpx;
+      height: 100rpx;
+      z-index: 9;
+}
+/*热门的轮播图片spike*/
+
+.tui-spike-box {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.tui-spike-title {
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.tui-spike-title::after {
+  left: 0;
+}
+
+.tui-spike-swiper {
+  min-height: 440rpx;
+}
+
+.tui-pro-item {
+  display: flex;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  position: relative;
+}
+
+.tui-pro-item::after {
+  left: 240rpx;
+}
+
+.tui-pro-img {
+  width: 220rpx;
+  height: 220rpx;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 12rpx;
+}
+
+.tui-pro-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.tui-pro-tit {
+  color: #2e2e2e;
+  font-size: 26rpx;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.tui-pro-btmbox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tui-sale-price {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #e41f19;
+}
+
+.tui-factory-price {
+  font-size: 24rpx;
+  color: #a0a0a0;
+  text-decoration: line-through;
+  padding-left: 12rpx;
+}
+
+.tui-countdown {
+  display: flex;
+  align-items: center;
+}
+
+.tui-countdown-text {
+  padding: 0 8rpx;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #555;
+}
+
+/*spike*/

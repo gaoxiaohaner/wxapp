@@ -1,0 +1,151 @@
+<block wx:if="{{ifopen}}">
+
+ <view class="page">
+  <scroll-view class="scrollList" scroll-y style="height:{{winHeight}}px">
+    <view class="search-bar">
+      <view class="search-bar-form">
+        <view class="search-bar-box">
+          <input confirm-type="search" class="search-bar-input" placeholder="输入所搜索的内容" placeholder-class="phcolor" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view  wx:if="{{inputVal}}" bindtap="clearInput">
+            <icon type="clear" size="20"></icon>
+          </view>
+        </view>
+        <label class="search-bar-label" wx:if="{{!inputShowed}}" bindtap="showInput">
+          <view class="search-bar-text">输入搜索的内容</view>
+        </label>
+      </view>
+    </view> 
+<!-- 搜索之后显示的东西-->
+    <view class="tui-list search-result" wx:if="{{inputVal}}">
+          <view class="goods-container">
+
+    <block wx:if="{{addpeopledetail}}">
+    <tui-cell   style="width:100%" tui-cell-class="tui-msg" last="{{true}}">
+      <view class="tui-msg-box">
+        <image src="{{addpeopledetail.userInfo.avatarUrl}}" class="tui-msg-pic" mode="widthFix"></image>
+        <view class="tui-msg-item">
+          <view class="tui-msg-name">昵称：{{addpeopledetail.userInfo.nickName}}</view>
+          <view class="tui-msg-content">country:：{{addpeopledetail.userInfo.country}}</view>
+        </view>
+      </view>
+      <view class="tui-msg-right {{addpeopledetail.level==3?'tui-right-dot':''}}">
+        <view class="tui-msg-time">性别：{{addpeopledetail.userInfo.gender==1?'男':'女'}}</view>
+     <tui-tag  bindtap="addpeople" style="width:18vw" size="small" tui-tag-class="tui-mrbtm">添加好友</tui-tag>
+      </view>
+    </tui-cell>
+    </block>
+
+    </view>
+   </view>
+
+    <view wx:if="{{!inputVal}}">
+    <!--不搜索时候的原有界面-->
+
+<view class="container">
+
+      <view style="width:100vw" class="kind-list" bindtap="pengyouquan">
+        <view class="kind-list_item">
+          <view  class="tui-flex kind-list_item-hd">
+            <view class="tui-flex_item"> 朋友圈 </view>
+            <image class="kind-list_img tui-img-7" src="/image/pengyouquan.png"></image>
+          </view>
+      </view>
+    </view>
+
+<!-- 好友请求列表-->
+    <view style="width:100vw" class="kind-list">
+
+        <view class="kind-list_item">
+          <view  class="tui-flex kind-list_item-hd {{open ? 'kind-list_item-hd_show' : ''}}" bindtap="kindToggle">
+            <view class="tui-flex_item">好友请求</view>
+           <tui-badge wx:if="{{peoplecheck.length!=0}}" type="danger"  tui-badge-class="tui-badge">好友请求:{{peoplecheck.length}}</tui-badge>
+            <image wx:else  class="kind-list_img tui-img-7" src="/image/class.png"></image>
+          </view>
+          <view class="kind-list_item-bd {{open ? 'kind-list_item-bd_show' : ''}}">
+            <view class="tui-cells {{open ? 'tui-cells_show' : ''}}">
+           <block wx:for-items="{{peoplecheck}}" wx:for-item="item" wx:key="item">
+               <tui-cell style="width:100%" tui-cell-class="tui-msg" last="{{true}}">
+              <view class="tui-msg-box">
+                <image src="{{peoplecheck[index].peopleask.avatarUrl}}" class="tui-msg-pic" mode="widthFix"></image>
+                  <view class="tui-msg-item">
+                  <view class="tui-msg-name">昵称：{{peoplecheck[index].peopleask.nickName}}</view>
+                  <view class="tui-msg-content">性别：{{addpeopledetail.userInfo.gender==1?'男':'女'}}</view>
+                  </view>
+                  </view>
+                  <view class="tui-msg-right">
+                   <tui-tag  data-info="{{peoplecheck[index]}}"  bindtap="cancelpeopleadd" style="width:18vw"  shape="circle" size="small" type="red" tui-tag-class="tui-mrbtm">拒绝请求</tui-tag>
+                    <tui-tag  data-info="{{peoplecheck[index]}}" bindtap="confirmpeopleadd"  style="width:18vw"  shape="circle"  size="small"  type="green" tui-tag-class="tui-mrbtm">接收请求</tui-tag>
+                </view>
+              </tui-cell>
+            </block>
+            </view>
+          </view>
+        </view>
+
+    </view>
+
+<!-- 拒绝的代码逻辑还没有想好
+<view wx:for="{{askjujuelist}}" wx:for-index="index" wx:key="key">
+    <image class="userinfo-avatar"  src="{{askjujuelist[index].peopleask.avatarUrl}}"> </image>
+    <text>{{askjujuelist[index].peopleask.nickName}}</text>
+    <button  data-info="{{askjujuelist[index]}}" bindtap="knowjujue"> 知道了</button>
+</view>
+-->
+
+
+<!-- 聊天室的东西-->
+    <view style="width:100vw" class="kind-list" bindtap="openActionSheet">
+        <view class="kind-list_item">
+          <view  class="tui-flex kind-list_item-hd }}">
+            <view class="tui-flex_item">聊天室测试</view>
+            <image class="kind-list_img tui-img-7" src="/image/chat.png"></image>
+          </view>
+      </view>
+    </view>
+
+      <tui-actionsheet show="{{showActionSheet}}" tips="{{tips}}" item-list="{{itemList}}" mask-closable="{{maskClosable}}" color="{{color}}" size="{{size}}" is-cancel="{{isCancel}}" bind:click="itemClick" bind:cancel="closeActionSheet"></tui-actionsheet>
+
+
+<!-- 
+<button  bindtap="go" data-id="chat0">测试聊天室</button>
+<button bindtap="go" data-id="chat1">聊天室1</button>
+<button  bindtap="go" data-id="chat2">聊天室2</button>
+<button  bindtap="go" data-id="chat3">聊天室3</button>
+-->
+
+
+    <view style="width:100vw" class="kind-list">
+        <view class="kind-list_item">
+          <view  class="tui-flex kind-list_item-hd }}">
+            <view class="tui-flex_item">好友列表</view>
+          </view>
+      </view>
+    </view>
+    
+  <block wx:for="{{peoplelist}}" wx:key="index">
+    <tui-cell data-info="{{peoplelist[index]}}" bindtap="peoplepage"   style="width:100%" tui-cell-class="tui-msg" last="{{true}}">
+      <view class="tui-msg-box">
+        <image src="{{item.userInfo.avatarUrl}}" class="tui-msg-pic" mode="widthFix"></image>
+        <view class="tui-msg-item">
+          <view class="tui-msg-name">昵称：{{item.userInfo.nickName}}</view>
+          <view class="tui-msg-content">country:：{{item.userInfo.country}}</view>
+        </view>
+      </view>
+      <view class="tui-msg-right {{item.level==3?'tui-right-dot':''}}">
+        <view class="tui-msg-time">性别：{{item.userInfo.gender==1?'男':'女'}}</view>
+      </view>
+    </tui-cell>
+  </block>
+   <view class="tui-safearea-bottom"></view>
+
+</view>
+<!-- 搜索好友时候的界面结束view组件-->
+   </view>
+
+
+  </scroll-view>
+</view>
+
+
+
+</block>

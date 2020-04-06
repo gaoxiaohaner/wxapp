@@ -1,0 +1,14 @@
+<block wx:if="{{ifopen==1}}">  
+  
+管理员的页面
+
+<input  bindinput="Input" 
+value="{{url}}" placeholder='点击粘贴源码'/>
+<button bindtap="up">更新源码链接</button>
+<button bindtap="check">查看源码下载次数</button>
+<text  wx:if="{{flag}}"> 下载次数：{{times}}</text>
+<input bindinput="Input1"   placeholder='输入路径' value="{{path}}"></input>
+<button bindtap="huoqu">获取小程序码</button>
+<image  bindtap="previewImg" data-img="{{fileid}}" src="{{fileid}}"></image>
+</block>  
+  

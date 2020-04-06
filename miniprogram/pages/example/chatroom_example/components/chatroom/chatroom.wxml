@@ -1,0 +1,99 @@
+
+<image wx:if="{{!backgroundimage}}" class="bg" src="/images/startBg.jpg"></image>
+<image wx:if="{{backgroundimage}}" class="bg" src="{{backgroundimage}}"></image>
+<view class="chatroom">
+<!-- 
+  这是顶部的标题部分
+  <view class="header">
+    <view class="left"></view>
+    <view class="middle">{{groupName}}</view>
+    <view class="right"></view>
+  </view>
+-->
+  <!-- chats -->
+  <scroll-view 
+    class="body" 
+    scroll-y 
+    scroll-with-animation="{{scrollWithAnimation}}"
+    scroll-top="{{scrollTop}}" 
+    scroll-into-view="{{scrollToMessage}}"
+    bindscrolltoupper="onScrollToUpper"
+  >
+    <view 
+      wx:for="{{chats}}"
+      wx:key="item"
+      id="item-{{index}}"
+      class="message {{openId == item._openid ? 'message__self' : ''}}"
+    >
+      <image 
+        class="avatar"
+        src="{{item.avatar}}"
+        mode="scaleToFill"
+      ></image> 
+      <view class="main">
+      <!--
+      <view class="nickname">{{item.sendTime}}</view>
+       -->
+        <view class="nickname">{{item.nickName}}</view>
+        <block wx:if="{{item.msgType === 'image'}}">
+          <view class="image-wrapper">
+            <view class="loading" wx:if="{{item.writeStatus > -1}}">{{item.writeStatus}}%</view>
+            <image src="{{item.tempFilePath || item.imgFileID}}" data-fileid="{{item.tempFilePath || item.imgFileID}}" class="image-content" style="{{item.imgStyle}}"mode="scallToFill" 
+              bindtap="onMessageImageTap"></image>
+          </view>
+        </block>
+        <block wx:if="{{item.msgType === 'text'}}">
+          <view class="text-wrapper">
+            <view class="loading" wx:if="{{item.writeStatus === 'pending'}}">···</view>
+            <view class="text-content">{{item.textContent}}</view>
+          </view>
+        </block>
+        <block wx:if="{{item.msgType === 'record'}}">
+          <view class="text-wrapper" data-file="{{item.recordID}}" bindtap="play">
+            <view class="loading" wx:if="{{item.writeStatus === 'pending'}}">···</view>
+         <image src="/image/listen.png"  class="image-content2" mode="scallToFill" ></image>
+            
+          </view>
+        </block>
+        <block wx:if="{{item.msgType === 'file'}}">
+          <view class="text-wrapper" data-file="{{item.FileID}}" bindtap="downloadfile">
+            <view class="loading" wx:if="{{item.writeStatus === 'pending'}}">···</view>
+            <view style="background-image:url(https://636f-code-test-1301231348.tcb.qcloud.la/file.png?sign=b3d457b31c08be2b72243eaa24704271&t=1586012519) ;width:14vh; height:14vh;  background-size: 100% 100%; text-align:center;" class="image-content1">
+             {{item.filename}}</view>
+          </view>
+        </block>
+
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- message sender -->
+  <view class="footer">
+    <view class="message-sender" wx:if="{{userInfo}}">
+    
+      <image  src="./photo.png" class="btn-send-image"  mode="scaleToFill"
+        bindtap="onChooseImage"></image>
+      
+      <input  class="text-input"  type="text" confirm-type="send"  bindconfirm="onConfirmSendText"
+        cursor-spacing="20" value="{{textInputValue}}"></input>
+
+      <image wx:if="{{!recording}}"  src="/image/record.png" class="btn-send-image"  mode="scaleToFill" bindtap="yuyin"></image>
+        <image wx:if="{{recording}}" src="/image/record.gif" class="btn-send-image"  mode="scaleToFill"  bindtap="stop"></image>
+
+       <image  src="/image/filelogo.png" class="btn-send-image"  mode="scaleToFill"
+        bindtap="file"></image>
+
+
+    </view>
+
+    <view class="message-sender" wx:if="{{!userInfo}}">
+      <button 
+        open-type="getUserInfo" 
+        bindgetuserinfo="onGetUserInfo"
+        class="userinfo"
+      >请先登录后参与办公</button>
+    </view>
+  </view>
+
+</view>
+

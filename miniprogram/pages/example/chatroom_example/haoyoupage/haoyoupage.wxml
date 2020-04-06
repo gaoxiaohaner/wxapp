@@ -1,0 +1,38 @@
+<block wx:if="{{ifopen}}">
+<view class="top_contain">
+      <view class="des_contain">
+             <view class="tui-msg-right" >
+      <tui-tag  bindtap="chooseimgae" size="small" tui-tag-class="tui-mrbtm">更换聊天背景</tui-tag>
+             </view>
+            <view class="name">{{haoyouinfo.userInfo.nickName}}</view>
+            <view class="sign">{{haoyouinfo.userInfo.country}}</view>
+      </view>
+      <view class="avator_box">
+            <image class="avator" src="{{haoyouinfo.userInfo.avatarUrl}}"></image>
+      </view>
+
+</view>
+<view class="contain">
+      <view class="title">好友备注</view>
+      <view class="description">
+            <text space="emsp" decode="{{ true }}">{{des}}</text>
+      </view>
+      <view class="title">联系方式</view>
+      <view class="description">
+            <view class="tip" bindtap="copy" data-copy="一只拒绝穿格子衫的程序猿" data-name="一只拒绝穿格子衫的程序猿">
+                  <view>公众号</view>:
+                  <text>复制公众号名称</text>
+            </view>
+            <view class="tip" bindtap="copy" data-copy="一只拒绝穿格子衫的程序猿" data-name="性别">
+                  <view>城市</view>:
+                  <text>{{haoyouinfo.userInfo.province}}</text>
+            </view>
+            <view class="tip" bindtap="copy" data-copy="16601303373" data-name="微信号">
+                  <view>微信号</view>:
+                  <text>16601303373</text>
+            </view>
+      </view>
+
+      <button bindtap="chat">点击进行聊天</button>
+</view>
+</block>
