@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-xlsx": "^0.15.0",
+    "node-xlsx": "^0.15.1",
     "tcb-router": "^1.1.2",
     "tenpay": "^2.1.18",
     "wx-server-sdk": "latest"
