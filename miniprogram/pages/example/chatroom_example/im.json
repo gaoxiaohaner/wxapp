@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "",
+    "usingComponents": {
+      "tui-cell": "components/list-cell/list-cell",
+      "tui-button": "components/button/button",
+      "tui-actionsheet": "components/actionsheet/actionsheet",
+      "tui-tag": "components/tag/tag",
+      "tui-collapse": "components/tui-collapse/tui-collapse",
+      "tui-list-cell": "components/list-cell/list-cell",
+      "tui-badge": "components/badge/badge"
+    }
+}

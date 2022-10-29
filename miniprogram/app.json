@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/example/chatroom_example/room/room",
+    "pages/example/chatroom_example/im",
+    "pages/login/login",
+    "pages/example/chatroom_example/haoyoupage/haoyoupage"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "学生地理位置校对"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "仿微信好友",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "cu-custom": "/style/cu-custom/cu-custom",
+    "wh-authorCard": "/style/authorCard/wh-authorCard"
+  }
+}

@@ -1,0 +1,129 @@
+
+
+
+
+
+
+<wh-authorCard isHidden="{{aflag}}" id="authorCardId"></wh-authorCard>
+<scroll-view scroll-y class="DrawerPage {{modalName=='viewModal'?'show':''}}" bindscroll="onPageScroll" scroll-with-animation="true" style="background-color: {{skin?'#ffffff':'#ffffff'}};" >
+
+
+
+    <view class="home text-shadow-meow" bindtap="showModal" data-target="viewModal">
+        <view class="home-btn home-img shadow-blur"></view>
+    </view>
+
+
+    <view class="flex justify-center align-center bg-white" style="height:40vh; background-image:url(https://i.loli.net/2019/07/05/5d1eb991a72de80058.png); background-repeat: no-repeat; background-size: 100% 100%;">
+        <view bindtap="showMask" class="grid col-1 margin-bottom text-center">
+            <view class="text-xxxl padding text-shadow-meow" role="" aria-label="">
+                <text class="text-white text-bold">一只拒绝穿格子衫的程序猿</text>
+            </view>
+      <view  class="text-xl padding text-shadow-meow text-white text-bold" role="" aria-label="">
+            <text class="text-white">QQ群:1050494616</text>
+            </view>
+        </view>
+    </view>
+
+
+<view class="container">
+
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+       <open-data  class="userinfo-avatar" type="userAvatarUrl"></open-data>    
+    <view class="userinfo-nickname-wrapper">
+    <open-data type="userNickName"></open-data>
+
+    </view>
+  </view>
+
+  
+  <view class="uploader">
+    <button bindtap="go" data-url="../example/chatroom_example/im"  class="uploader-text">
+      <text>好友交流</text>
+    </button>
+  </view>
+
+</view>
+</scroll-view>
+
+
+
+
+
+
+<view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
+    <text class="cuIcon-pullright"></text>
+</view>
+<scroll-view scroll-y class="DrawerWindow {{modalName=='viewModal'?'show':''}}" bindtouchstart="touchStart" bindtouchend="touchEnd">
+    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl padding-bottom" style="margin-top:100rpx;">
+        <view class="cu-list menu sm-border card-menu margin-top shadow-meow">
+            <view class="cu-item" style='min-height: 200rpx;'>
+                <view wx:if="{{!hasUserInfo && canIUse}}" class="content grid col-1">
+                    <view class="padding-sm text-sm flex justify-center">
+                        <text class="text-grey">允许微信授权后，可体验更多功能</text>
+                    </view>
+                    <view class="padding-sm flex justify-center">
+                        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'>
+                            微信授权
+                        </button>
+                    </view>
+                </view>
+                <block wx:else>
+                    <view class="content flex justify-center align-center">
+                        <view class="flex-sub">
+                           <open-data class="cu-avatar xl round menu-img userinfo-avatar" type="userAvatarUrl"></open-data>    
+                        </view>
+                        <view class="flex-twice grid col-1 ">
+                            <view class="text-lg margin-xs">
+                                <text class="text-black text-bold">{{userInfo.nickName}}</text>
+                            </view>
+                            <view class="margin-xs bg-white">
+                                <view class="cu-tag radius">{{Role}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <view class="cu-item arrow">
+                <view class="content" bindtap="showMask">
+                    <text class="cuIcon-github text-gray menu-img"></text>
+                    <text class="text-grey">联系方式</text>
+                </view>
+            </view>
+            <view class="cu-item arrow">
+                <button class="cu-btn content" open-type="contact">
+                    <text class="cuIcon-communityfill text-lightBlue menu-img"></text>
+                    <text class="text-grey">客服会话</text>
+                </button>
+            </view>
+            <view wx:if="{{!roleFlag}}" class="cu-item arrow">
+                <view class="content">
+                    <text class="cuIcon-discoverfill text-gray menu-img"></text>
+                    <text class="text-grey">管理员</text>
+                </view>
+            </view>
+            <block wx:else>
+                <view class="cu-item arrow">
+                    <navigator class="content" hover-class="none" url="../halo/halo" open-type="navigate" bindtap="shutDownDrawer">
+                        <text class="cuIcon-discoverfill text-gray menu-img"></text>
+                        <text class="text-grey">Halo 仪表盘</text>
+                    </navigator>
+                </view>
+            </block>
+
+            <view class="cu-item arrow">
+                <button class="cu-btn content" open-type="feedback">
+                    <text class="cuIcon-writefill text-lightBlue"></text>
+                    <text class="text-grey">意见反馈</text>
+                </button>
+            </view>
+
+        </view>
+    </view>
+    <view class="text-xs flex justify-center" style="position:fixed; bottom:20rpx; width:100%; text-align:center;">
+        <view class="text-grey" style="margin-right:4rpx;">Powered by</view>
+        <view class="text-lightBlue">WeHalo</view>
+    </view>
+</scroll-view>

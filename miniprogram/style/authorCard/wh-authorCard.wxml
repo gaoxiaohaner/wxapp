@@ -1,0 +1,19 @@
+<!-- 蒙版效果 -->
+<view class="mask" hidden="{{isHidden}}" catchtap="closeMask">
+    <view class="masks" catchtap="prevent" animation="{{ani}}">
+        <view class="box">
+            <image class="leftImage" mode="widthFix" src="cloud://code-test.636f-code-test-1301231348/qqqun.jpg" bindtap="preview"></image>
+            <view class="right">
+                <view class="title">
+                    <text class="name">拒穿格子衫程序猿</text>
+                </view>
+                <view class="info">
+                    <view class="field">微信公众号</view>
+                    <view class="value">一只拒绝穿格子衫的程序猿</view>
+                    <view class="field">QQ交流群</view>
+                    <view class="value">1050494616</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
