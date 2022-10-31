@@ -25,8 +25,6 @@
 5. 以上四步设置完成后, 即可进入好友交流/聊天室测试中进行测试
 
 ## 实现效果
-<div >
-<div>
 <img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/1.PNG" width="250" height="500" align=left />
 <img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/2.PNG" width="250" height="500" align=left />
 <img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/12.PNG" width="250" height="500" align=left />
