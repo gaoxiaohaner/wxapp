@@ -5,6 +5,7 @@
       1. user // 基本的小程序用户
       2. SubscribeMessage  // 监听私聊信息并向对方发送消息提醒
       3. addpeople // 添加好友
+      4. chatroom_example // 聊天记录存储集合
 
 
 
