@@ -159,7 +159,7 @@ Page({
                 app.globalData.userInfo = that.data.userInfo;
                 app.globalData.openid = res.result.data.OPENID
                 wx.switchTab({
-                  url: '/pages/usercenter/homepage/homepage',
+                  url: '/pages/index/index',
                 })
               },
               fail() {

@@ -2,7 +2,7 @@
 <view class="mask" hidden="{{isHidden}}" catchtap="closeMask">
     <view class="masks" catchtap="prevent" animation="{{ani}}">
         <view class="box">
-            <image class="leftImage" mode="widthFix" src="cloud://code-test.636f-code-test-1301231348/qqqun.jpg" bindtap="preview"></image>
+            <image class="leftImage" mode="widthFix" src="https://636f-code-test-1301231348.tcb.qcloud.la/qqqun.jpg" bindtap="preview"></image>
             <view class="right">
                 <view class="title">
                     <text class="name">拒穿格子衫程序猿</text>

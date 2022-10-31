@@ -29,18 +29,18 @@ App({
           _openid: re.result
         }).get({
           success: function (res) {
-      
               that.globalData.openid= res.data[0]._openid;
               that.globalData.userInfo = res.data[0].userInfo;
               that.globalData.friends=res.data[0].friends;
               that.globalData.data=res.data[0]
               console.log(that.globalData)
-      
           }
         })
       }
     })
 
-    this.globalData = {}
+    this.globalData = {
+      useTmp : false // 默认不开启
+    }
   }
 })

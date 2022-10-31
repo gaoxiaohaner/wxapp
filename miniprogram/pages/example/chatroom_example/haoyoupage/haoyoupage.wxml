@@ -21,7 +21,7 @@
       <view class="description">
             <view class="tip" bindtap="copy" data-copy="一只拒绝穿格子衫的程序猿" data-name="一只拒绝穿格子衫的程序猿">
                   <view>公众号</view>:
-                  <text>复制公众号名称</text>
+                  <text>一只拒绝穿格子衫的程序猿</text>
             </view>
             <view class="tip" bindtap="copy" data-copy="一只拒绝穿格子衫的程序猿" data-name="性别">
                   <view>城市</view>:

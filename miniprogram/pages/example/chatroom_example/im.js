@@ -55,32 +55,53 @@ Page({
       }
     }
     if (that.data.chachong === 0) {//如果没有添加该好友
-      wx.requestSubscribeMessage({
-        tmplIds: [TmplId],
-        success(res) {
-          if (res.errMsg === 'requestSubscribeMessage:ok') {
-            wx.cloud.callFunction({
-              name: 'yunrouter',
-              data: {
-                $url: "addpeople", //云函数路由参数
-                addpeopleid: that.data.addpeopledetail._openid,//应该应答请求的那个人
-                askpeopleid: app.globalData.openid,//我自己，发出请求的人
-                peopleask: app.globalData.userInfo,
-                peopleadd: that.data.addpeopledetail.userInfo,
-                chatid: that.data.addpeopledetail._openid + app.globalData.openid
-              },
-              success: res => {
-                console.log('请求成功')
-              },
-              fail() {
-              }
-            });
+      // 如果开启了向对方发送消息提醒
+      if(app.globalData.useTmp){
+        wx.requestSubscribeMessage({
+          tmplIds: [TmplId],
+          success(res) {
+            if (res.errMsg === 'requestSubscribeMessage:ok') {
+              wx.cloud.callFunction({
+                name: 'yunrouter',
+                data: {
+                  $url: "addpeople", //云函数路由参数
+                  addpeopleid: that.data.addpeopledetail._openid,//应该应答请求的那个人
+                  askpeopleid: app.globalData.openid,//我自己，发出请求的人
+                  peopleask: app.globalData.userInfo,
+                  peopleadd: that.data.addpeopledetail.userInfo,
+                  chatid: that.data.addpeopledetail._openid + app.globalData.openid
+                },
+                success: res => {
+                  console.log('请求成功')
+                },
+                fail() {
+                }
+              });
+            }
+          },
+          fail(re) {
+            console.log(re)
           }
-        },
-        fail(re) {
-          console.log(re)
-        }
-      })
+        })
+      }else{
+        wx.cloud.callFunction({
+          name: 'yunrouter',
+          data: {
+            $url: "addpeople", //云函数路由参数
+            addpeopleid: that.data.addpeopledetail._openid,//应该应答请求的那个人
+            askpeopleid: app.globalData.openid,//我自己，发出请求的人
+            peopleask: app.globalData.userInfo,
+            peopleadd: that.data.addpeopledetail.userInfo,
+            chatid: that.data.addpeopledetail._openid + app.globalData.openid
+          },
+          success: res => {
+            console.log('请求成功')
+          },
+          fail() {
+          }
+        });
+      }
+
     }
     else {
       wx.showModal({

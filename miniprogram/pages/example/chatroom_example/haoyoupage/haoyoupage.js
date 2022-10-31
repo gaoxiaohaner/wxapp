@@ -5,7 +5,7 @@ Page({
   data: {
     imgList:[],
     backgroundimage:'',
-    des: '欢迎关注公众号【一只拒绝穿格子衫的程序猿】'
+    des: '欢迎关注公众号【一只拒绝穿格子衫的程序猿】 回复 【仿微信】 获取源代码'
   },
   onLoad: function (options) {
 
@@ -61,24 +61,32 @@ Page({
       // })
       let  lessonSubId='wP0DrgBo_CKL51uA2QYFRJS-_IMnLUMWataPkALuw6s'
       //调用订阅消息提醒
-      wx.requestSubscribeMessage({
-        tmplIds: [lessonSubId],//这个是微信平台申请的 id
-        success:res => {
-         console.log(res)
-         console.log(res[lessonSubId])
-         if(res[lessonSubId]=="accept"){
-             console.log("接受订阅申请")
-             wx.navigateTo({
-              url: '/pages/example/chatroom_example/room/room?id=' + that.data.chatid + '&name=' + that.data.chatname+'&backgroundimage='+that.data.backgroundimage+'&haoyou_openid='+that.data.haoyouinfo._openid,
-            })
-         }else if(res[lessonSubId]=="reject"){
-             console.log("拒绝接受订阅申请")
-         }
-        },
-        fail(res){
-            console.log(res)
-        }
-      })
+      // 如果开启这个订阅消息提醒，否则就不提醒
+      if(app.globalData.useTmp){
+        wx.requestSubscribeMessage({
+          tmplIds: [lessonSubId],//这个是微信平台申请的 id
+          success:res => {
+           console.log(res)
+           console.log(res[lessonSubId])
+           if(res[lessonSubId]=="accept"){
+               console.log("接受订阅申请")
+               wx.navigateTo({
+                url: '/pages/example/chatroom_example/room/room?id=' + that.data.chatid + '&name=' + that.data.chatname+'&backgroundimage='+that.data.backgroundimage+'&haoyou_openid='+that.data.haoyouinfo._openid,
+              })
+           }else if(res[lessonSubId]=="reject"){
+               console.log("拒绝接受订阅申请")
+           }
+          },
+          fail(res){
+              console.log(res)
+          }
+        })
+      }else{
+        wx.navigateTo({
+          url: '/pages/example/chatroom_example/room/room?id=' + that.data.chatid + '&name=' + that.data.chatname+'&backgroundimage='+that.data.backgroundimage+'&haoyou_openid='+that.data.haoyouinfo._openid,
+        })
+      }
+
 
 
   },

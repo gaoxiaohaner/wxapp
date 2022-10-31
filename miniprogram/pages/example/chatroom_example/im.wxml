@@ -86,6 +86,7 @@
           </view>
         </view>
 
+
         <tui-actionsheet show="{{showActionSheet}}" tips="{{tips}}" item-list="{{itemList}}" mask-closable="{{maskClosable}}" color="{{color}}" size="{{size}}" is-cancel="{{isCancel}}" bind:click="itemClick" bind:cancel="closeActionSheet"></tui-actionsheet>
 
         <view style="width:100vw" class="kind-list">

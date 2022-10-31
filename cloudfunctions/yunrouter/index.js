@@ -154,34 +154,37 @@ exports.main = async (event, context) => {
   });
   app.router('addpeople', async (ctx) => {
     try {
-      await db.collection('SubscribeMessage').add({
-        data: {
-          //具体的字段可以根据自己的需求使用，但是data的值要注意
-          //一定要这样传，和模板消息给的对应起来
-          touser: event.askpeopleid,
-          page: 'pages/index/index',
-          data: {
-            thing1: {
-              value: event.peopleadd.nickName
-            },
-            thing2: {
-              value: '对方接收了您的好友请求'
-            },
-            date3: {
-              value: "2020-02-10"
-            }, //这里的时间一定要填对，不然没有办法发送订阅消息
-            thing4: {
-              value: '点击好友聊天吧'
-            },
-            phrase5: {
-              value: '哈哈哈'
-            },
-          },
-          id: event.chatid,
-          templateId: TmplId,
-          status: 0, //表示需要发送这个请求
-        },
-      })
+      ///////************* */
+      // 如果要开启订阅消息提醒，则取消下方的注释
+      
+      // await db.collection('SubscribeMessage').add({
+      //   data: {
+      //     //具体的字段可以根据自己的需求使用，但是data的值要注意
+      //     //一定要这样传，和模板消息给的对应起来
+      //     touser: event.askpeopleid,
+      //     page: 'pages/index/index',
+      //     data: {
+      //       thing1: {
+      //         value: event.peopleadd.nickName
+      //       },
+      //       thing2: {
+      //         value: '对方接收了您的好友请求'
+      //       },
+      //       date3: {
+      //         value: "2020-02-10"
+      //       }, //这里的时间一定要填对，不然没有办法发送订阅消息
+      //       thing4: {
+      //         value: '点击好友聊天吧'
+      //       },
+      //       phrase5: {
+      //         value: '哈哈哈'
+      //       },
+      //     },
+      //     id: event.chatid,
+      //     templateId: TmplId,
+      //     status: 0, //表示需要发送这个请求
+      //   },
+      // })
       await db.collection('addpeople').add({
         data: {
           addpeopleid: event.addpeopleid, //想要加的那个人的id
