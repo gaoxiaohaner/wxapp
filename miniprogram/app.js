@@ -15,24 +15,6 @@ App({
       })
     }
 
-
-
-    //判断是否审核通过
-
-    wx.cloud.callFunction({
-      name: 'yunrouter',
-      data: {
-        $url: "shenhetongguo", //云函数路由参数
-      },
-      success: res => {
-        console.log(res)
-          that.globalData.ifopen = res.result.data[0].tongguo;
-      },
-      fail(e) {
-        console.log(e)
-      }
-    });
-
  
     const db = wx.cloud.database();
 

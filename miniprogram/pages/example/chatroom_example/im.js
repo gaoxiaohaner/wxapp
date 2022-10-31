@@ -91,9 +91,6 @@ Page({
   },
   onLoad(){
     this.getheight()
-    this.setData({
-      ifopen: 1//app.globalData.ifopen
-    })
   },
   onShow: function (options) {
     //重新更新好友列表

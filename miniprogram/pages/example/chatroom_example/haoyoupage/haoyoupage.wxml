@@ -1,4 +1,3 @@
-<block wx:if="{{ifopen}}">
 <view class="top_contain">
       <view class="des_contain">
              <view class="tui-msg-right" >
@@ -13,9 +12,10 @@
 
 </view>
 <view class="contain">
-      <view class="title">好友备注</view>
+      <view class="title">系统备注</view>
       <view class="description">
             <text space="emsp" decode="{{ true }}">{{des}}</text>
+            <image  bindtap="preview" src = "https://636f-code-test-1301231348.tcb.qcloud.la/qrode.png"  ></image>
       </view>
       <view class="title">联系方式</view>
       <view class="description">
@@ -35,4 +35,3 @@
 
       <button bindtap="chat">点击进行聊天</button>
 </view>
-</block>

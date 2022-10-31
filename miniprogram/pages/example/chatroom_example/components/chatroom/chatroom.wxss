@@ -41,7 +41,7 @@
 .chatroom .body {
   flex: 2;
   display: flex;
-  height: 80vh;
+  height: 78vh;
 
   /*background: rgb(209, 223, 224);  */
 

@@ -8,9 +8,7 @@ Page({
     des: '欢迎关注公众号【一只拒绝穿格子衫的程序猿】'
   },
   onLoad: function (options) {
-    this.setData({
-      ifopen: app.globalData.ifopen
-    })
+
     let haoyouinfo1 = JSON.parse(options.haoyouinfo);
     this.setData({
       haoyouinfo:haoyouinfo1
@@ -18,6 +16,12 @@ Page({
     
     console.log(this.data.haoyouinfo)
 
+  },
+  preview(){
+    wx.previewImage({
+      current:'https://636f-code-test-1301231348.tcb.qcloud.la/qrode.png',
+      urls:['https://636f-code-test-1301231348.tcb.qcloud.la/qrode.png']
+    })
   },
   //复制
   copy(e) {
@@ -33,8 +37,6 @@ Page({
     })
   },
   chat(){
-
- 
       let that = this;
       if(!this.data.backgroundimage1){
         //就证明没有更换图片

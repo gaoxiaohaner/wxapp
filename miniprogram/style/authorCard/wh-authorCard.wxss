@@ -51,7 +51,7 @@
 
 .right {
     width: 65%;
-    height: 230rpx;
+    height: 25vh;
     background-color: #fff;
     border: 4rpx solid #e6e6e6;
     border-radius: 0 20rpx 20rpx 0;

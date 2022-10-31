@@ -1,18 +1,10 @@
-
-
-
-
-
-
+<!-- 这是一些卡片的弹出 -->
 <wh-authorCard isHidden="{{aflag}}" id="authorCardId"></wh-authorCard>
 <scroll-view scroll-y class="DrawerPage {{modalName=='viewModal'?'show':''}}" bindscroll="onPageScroll" scroll-with-animation="true" style="background-color: {{skin?'#ffffff':'#ffffff'}};" >
 
-
-
-    <view class="home text-shadow-meow" bindtap="showModal" data-target="viewModal">
-        <view class="home-btn home-img shadow-blur"></view>
+    <view class="home text-shadow-meow"bindtap="showModal" data-target="viewModal">
+        <view class="home-btn home-img shadow-blur"  ></view>
     </view>
-
 
     <view class="flex justify-center align-center bg-white" style="height:40vh; background-image:url(https://i.loli.net/2019/07/05/5d1eb991a72de80058.png); background-repeat: no-repeat; background-size: 100% 100%;">
         <view bindtap="showMask" class="grid col-1 margin-bottom text-center">
@@ -25,20 +17,17 @@
         </view>
     </view>
 
-
+<!--主页面的展示 -->
 <view class="container">
 
-
-  <!-- 用户 openid -->
+  <!-- 主页中用户信息的展示 eg:头像 -->
   <view class="userinfo">
        <open-data  class="userinfo-avatar" type="userAvatarUrl"></open-data>    
     <view class="userinfo-nickname-wrapper">
     <open-data type="userNickName"></open-data>
-
     </view>
-  </view>
+  </view> 
 
-  
   <view class="uploader">
     <button bindtap="go" data-url="../example/chatroom_example/im"  class="uploader-text">
       <text>好友交流</text>
@@ -48,11 +37,7 @@
 </view>
 </scroll-view>
 
-
-
-
-
-
+<!-- 点击左上角抽屉，左侧弹窗出现 -->
 <view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
     <text class="cuIcon-pullright"></text>
 </view>
@@ -104,14 +89,6 @@
                     <text class="text-grey">管理员</text>
                 </view>
             </view>
-            <block wx:else>
-                <view class="cu-item arrow">
-                    <navigator class="content" hover-class="none" url="../halo/halo" open-type="navigate" bindtap="shutDownDrawer">
-                        <text class="cuIcon-discoverfill text-gray menu-img"></text>
-                        <text class="text-grey">Halo 仪表盘</text>
-                    </navigator>
-                </view>
-            </block>
 
             <view class="cu-item arrow">
                 <button class="cu-btn content" open-type="feedback">
@@ -124,6 +101,6 @@
     </view>
     <view class="text-xs flex justify-center" style="position:fixed; bottom:20rpx; width:100%; text-align:center;">
         <view class="text-grey" style="margin-right:4rpx;">Powered by</view>
-        <view class="text-lightBlue">WeHalo</view>
+        <view class="text-lightBlue">wxappchat</view>
     </view>
 </scroll-view>

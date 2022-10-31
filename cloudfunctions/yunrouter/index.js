@@ -46,19 +46,6 @@ exports.main = async (event, context) => {
   });
 
 
-//审核是否通过
-  app.router('shenhetongguo', async (ctx) => {
-    const wxContext = cloud.getWXContext()
-    try {
-      ctx.body = await db.collection('dba')
-        .where({
-          number: 2017011370
-        }).get()
-    } catch (e) {
-      console.error(e)
-    }
-  })
-
 
   //用户获取openid
   app.router('openid', async (ctx) => {
@@ -123,7 +110,6 @@ exports.main = async (event, context) => {
       // 从云开数据库中查询等待发送的消息列表
       const messages = await db.collection('SubscribeMessage')
         // 查询条件这里做了简化，只查找了状态为未发送的消息
-        // 在真正的生产环境，可以根据开课日期等条件筛选应该发送哪些消息
         .where({
           done: false,
           // id: event.id

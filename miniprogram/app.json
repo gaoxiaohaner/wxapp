@@ -8,7 +8,7 @@
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "学生地理位置校对"
+      "desc": "校对位置"
     }
   },
   "window": {
