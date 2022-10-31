@@ -29,13 +29,12 @@
 <div>
 <img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/1.PNG" width="250" height="500" align=left />
 <img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/2.PNG" width="250" height="500" align=left />
-<img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/3.PNG" width="250" height="500" align=left />
+<img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/12.PNG" width="250" height="500" align=left />
+<img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/13.PNG" width="250" height="500" align=left />
+
 <img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/4.PNG" width="250" height="500" align=left />
-<img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/5.PNG" width="250" height="500" align=left />
-<img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/6.PNG" width="250" height="500" align=left />
-<img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/7.PNG" width="250" height="500" align=left />
-<img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/8.PNG" width="250" height="500" align=left />
-<img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/9.PNG" width="250" height="500" align=left />
+
+
 <img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/10.PNG" width="250" height="500" align=left />
 <img src="https://636f-code-test-1301231348.tcb.qcloud.la/result/11.PNG" width="250" height="500" align=left />
 
